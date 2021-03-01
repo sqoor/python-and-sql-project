@@ -18,6 +18,13 @@ SELECT CHECKSUM_AGG(BINARY_CHECKSUM(*)) FROM sample_table WITH (NOLOCK);
 
 
 `
+
+serlize pucklet dataframe pandas serelization
+
+cmd read arguments 
+import sys
+print sys.argv
+
 import time
 
 while True:
@@ -37,3 +44,15 @@ sleep(5)
 script starts and stops first time
 difference between the first time run script and all the times after running the script
 rerun the script and make decision of
+
+
+* TODO make program OOP, manage the exceptions, DRY & KISS
+* TODO: text obfuscation for password and username encryption
+
+run script with arguments, expected values example:
+
+    --driver = '{ODBC Driver 17 for SQL Server}'
+    --server = 'ABDULLAH\SQL2019'
+    --userid = 'sa'
+    --password = '123456'
+    --database = 'Survey_Sample_A19'
