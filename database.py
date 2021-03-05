@@ -30,23 +30,26 @@ class Connection:
         return conn
 
     def run(self, sql_query):
+        result = None
+
         if self.conn:
             # TODO: manage exceptions for queries
-            df_all_users = pd.read_sql(sql_query, self.conn)
-            print(df_all_users.head(3))
+            result = pd.read_sql(sql_query, self.conn)
         else:
             print("Something wrong happened, not connected!")
 
+        return result
+
     def run_via_cursor(self, sql_query):
-         if self.conn:
-             cursor = self.conn.cursor()
-             cursor.execute(sql_query)
+        if self.conn:
+            cursor = self.conn.cursor()
+            cursor.execute(sql_query)
 
-             for row in cursor:
-                 print(row)
+            for row in cursor:
+                print(row)
 
-             return cursor
-         else:
+            return cursor
+        else:
             print("Something wrong happened, not connected!")
 
 

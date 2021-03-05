@@ -51,8 +51,14 @@ rerun the script and make decision of
 
 run script with arguments, expected values example:
 
-    --driver = '{ODBC Driver 17 for SQL Server}'
-    --server = 'ABDULLAH\SQL2019'
-    --userid = 'sa'
-    --password = '123456'
-    --database = 'Survey_Sample_A19'
+    driver = '{ODBC Driver 17 for SQL Server}'
+    server = 'ABDULLAH\SQL2019'
+    userid = 'sa'
+    password = '123456'
+    database = 'Survey_Sample_A19'
+
+> python main.py --driver "{ODBC Driver 17 for SQL Server}" --server ABDULLAH\SQL2019 --userid sa --password 123456 --database Survey_Sample_A19
+
+> python main.py driver="{ODBC Driver 17 for SQL Server}" server=ABDULLAH\SQL2019 userid=sa password=123456
+
+# TODO: dowload the libraries within the script, exceptions also 

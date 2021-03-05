@@ -1,23 +1,33 @@
-import argparse
-from Database import Connection
+import _utils
+
+try:
+    import pandas as pd
+    from argument import Argument
+    from database import Connection
+except ModuleNotFoundError:
+    _utils.InstallPackages({'pandas', 'argparse', 'pyodbc'})
+
+    import pandas as pd
+    from argument import Argument
+    from database import Connection
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--driver', help='driver')
-    parser.add_argument('--server', help='server name')
-    parser.add_argument('--database', help='database name')
-    parser.add_argument('--userid', help='userID')
-    parser.add_argument('--password', help='User password')
-    args = parser.parse_args()
+    args = Argument.get()
 
     # test connecting to the database
     conn = Connection(args.driver, args.server, args.database, args.userid, args.password)
-    conn.run('SELECT * FROM [User]')
+    result_df = conn.run('SELECT * FROM [SurveyStructure]')
 
-    #TODO: implement the stored prodcedure here (separate class and call here)
-    # first call the get the table data (seralize and save to file)
-    # next calls compare the seralized
+    print(result_df)
+    x = pd.read_pickle('result.pkl')  # if "result.pkl" existed
+    print(result_df.compare(x)) # error if x not existed or result_df
+
+    result_df.to_pickle('result.pkl')
+
+    # TODO: implement the stored procedure here (separate class and call here)
+    # first call the get the table data (serialize and save to file)
+    # next calls compare the serialized
 
 
 if __name__ == '__main__':
