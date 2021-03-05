@@ -14,7 +14,7 @@ class Argument:
         parser.add_argument('server', help='database server name')
         parser.add_argument('database', help='database name')
         parser.add_argument('userid', help='database user ID')
-        parser.add_argument('password', nargs='?', help='database user password')
+        parser.add_argument('password', help='database user password')
 
         print(parser.parse_args())
         print(type(parser.parse_args()))
