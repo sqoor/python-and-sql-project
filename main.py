@@ -21,7 +21,7 @@ def main():
 
     print(result_df)
     x = pd.read_pickle('result.pkl')  # if "result.pkl" existed
-    print(result_df.compare(x)) # error if x not existed or result_df
+    print(result_df.compare(x))  # error if x not existed or result_df
 
     result_df.to_pickle('result.pkl')
 

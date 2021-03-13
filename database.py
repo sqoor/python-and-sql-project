@@ -1,4 +1,4 @@
-import pyodbc 
+import pyodbc
 import pandas as pd
 
 
@@ -25,7 +25,9 @@ class Connection:
             print('Connected to the database successfully!')
         except Exception as error:
             conn = None
-            print(f'Failed to connect to the database! \nError: {str(error)}')
+            print(f'\nFailed to connect to the database! \nError: {str(error)}')
+            print(self.connection_string)
+            quit()
 
         return conn
 
@@ -51,9 +53,3 @@ class Connection:
             return cursor
         else:
             print("Something wrong happened, not connected!")
-
-
-
-
-
-
