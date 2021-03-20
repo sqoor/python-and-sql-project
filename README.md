@@ -1,17 +1,17 @@
 # Python SQL Project
 
-Description:
+### Description:
 Python and SQL project - connect to MSSQLServer and convert the getAllSurveyData stored procedure in the database to python code, 
 including (trigger, cursors) that fire the getAllSurveyData function
 
 
 
-Author: 
+### Author: 
 Abdullah Daqdoqa
 
 
 
-Run script with arguments, expected values example:
+### Run script with arguments, expected values example:
 
     driver = '{ODBC Driver 17 for SQL Server}'
     server = 'ABDULLAH\SQL2019'
@@ -19,38 +19,38 @@ Run script with arguments, expected values example:
     password = '123456'
     database = 'Survey_Sample_A19'
 
-Example to run the script: 
+#### Example to run the script: 
 > python main.py --driver "{ODBC Driver 17 for SQL Server}" --server ABDULLAH\SQL2019 --userid sa --password 123456 --database Survey_Sample_A19
 
 > python main.py -r "{ODBC Driver 17 for SQL Server}" -s ABDULLAH\SQL2019 -u sa -p 123456 -d Survey_Sample_A19
 
 
 
-Required Packages:
+### Required Packages:
 - it will be downloaded automatically within the script itself via pip.
 
 
 
-Environment:
+### Environment:
 - Windows 10 python 3.9.x
 
 
 
-Permissions:
+### Permissions:
 - to create new file result.pkl (a serialized file store dataframe of the SurveyStructure table) 
       used to compare the old database (SurveyStructure) data with new data read in the following script runs.
 - allowing the script to install pip packages to the OS.
 
 
 
-Resources:
+### Resources:
 - in the resources folder we have .pdf elaborating more about this project, 
     getAllSurveyData.sql file which is extracted from Survey_Sample_A19.bak,
     Survey_Sample_A19.bak a database backup which can be imported in MS SQL Server.
 
 
 
-Files:
+### Files:
 - _utils.py: has one class InstallPackages class by making an instance of this call it will install all the packages passed 
         to the constructor using pip on the OS.
 - argument: Argument is a class with one static method get(), used to read all the arguments from the command line/terminal 
@@ -66,7 +66,7 @@ Files:
 
 
 
-Behavior:
+### Behavior:
 - running the script for the first time (without result.pkl file) will create this file if not existed and get all survey data and create new view
 - running the script if the file was created, and the database table (SurveyStructure) status has been changed will, so data 
         from the database different from result.pkl will result updating the view.
