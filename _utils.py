@@ -2,6 +2,16 @@ import sys
 import subprocess
 import pkg_resources
 
+""" Documentation
+    Description:
+        InstallPackages class by making an instance of this call it will install all the packages passed 
+        to the constructor using pip on the OS.
+
+    Constructor Parameters:
+      packages_to_install (array of string): list of packages you want to install to run this script
+
+"""
+
 
 class InstallPackages:
     def __init__(self, packages_to_install):

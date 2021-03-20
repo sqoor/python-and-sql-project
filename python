@@ -1,6 +1,0 @@
-Namespace(driver='driver={ODBC Driver 17 for SQL Server}', server='server=ABDULLAH\\SQL2019', database='userid=sa', userid='password=123456', password=None)
-<class 'argparse.Namespace'>
-Failed to connect to the database! 
-Error: ('IM002', '[IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified (0) (SQLDriverConnect)')
-Something wrong happened, not connected!
-None
