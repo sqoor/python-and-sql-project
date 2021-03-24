@@ -18,11 +18,12 @@ Abdullah Daqdoqa
     userid = 'sa'
     password = '123456'
     database = 'Survey_Sample_A19'
+    verbose
 
 #### Example to run the script: 
-> python main.py --driver "{ODBC Driver 17 for SQL Server}" --server ABDULLAH\SQL2019 --userid sa --password 123456 --database Survey_Sample_A19
+> python main.py --driver "{ODBC Driver 17 for SQL Server}" --server ABDULLAH\SQL2019 --userid sa --password 123456 --database Survey_Sample_A19 --verbose
 
-> python main.py -r "{ODBC Driver 17 for SQL Server}" -s ABDULLAH\SQL2019 -u sa -p 123456 -d Survey_Sample_A19
+> python main.py -r "{ODBC Driver 17 for SQL Server}" -s ABDULLAH\SQL2019 -u sa -p 123456 -d Survey_Sample_A19 -v
 
 
 

@@ -1,5 +1,6 @@
 import pyodbc
 import pandas as pd
+from tools import Verbose
 
 """ Documentation: Connection
    Description:
@@ -42,11 +43,11 @@ class Connection:
     def connect(self):
         try:
             conn = pyodbc.connect(self.connection_string)
-            print('Connected to the database successfully!')
+            Verbose.print_ln('Connected to the database successfully!')
         except Exception as err:
             conn = None
-            print(f'\nFailed to connect to the database! \nError: {str(err)}')
-            print(self.connection_string)
+            Verbose.print_ln(f'\nFailed to connect to the database! \nError: {str(err)}')
+            Verbose.print_ln(self.connection_string)
             quit()
 
         return conn
@@ -68,11 +69,11 @@ class Connection:
             try:
                 result = pd.read_sql(sql_query, self.conn)
             except Exception as err:
-                print("was not able to run the query", sql_query)
-                print("Error:", str(err))
+                Verbose.print_ln("Was not able to run the query", sql_query)
+                Verbose.print_ln("Error:", str(err))
                 quit()
         else:
-            print("Something wrong happened, not connected!")
+            Verbose.print_ln("Something wrong happened, not connected!")
 
         return result
 
@@ -93,15 +94,15 @@ class Connection:
                 cursor.execute(sql_query)
 
                 for row in cursor:
-                    print(row)
+                    Verbose.print_ln(row)
 
                 return cursor
             except Exception as err:
-                print("Was not able to execute the query via the cursor")
-                print("Error:", str(err))
+                Verbose.print_ln("Was not able to execute the query via the cursor")
+                Verbose.print_ln("Error:", str(err))
                 quit()
         else:
-            print("Something wrong happened, not connected!")
+            Verbose.print_ln("Something wrong happened, not connected!")
 
     """ Documentation: create
       Description:
@@ -118,8 +119,8 @@ class Connection:
                 cursor.execute(sql_query)
                 self.conn.commit()
             except Exception as err:
-                print('Was not able to create view', sql_query)
-                print("Error:", str(err))
+                Verbose.print_ln('Was not able to create view', sql_query)
+                Verbose.print_ln("Error:", str(err))
                 quit()
         else:
-            print("Something wrong happened, not connected!")
+            Verbose.print_ln("Something wrong happened, not connected!")
