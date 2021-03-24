@@ -56,7 +56,7 @@ class Starter:
     """
     def create_or_update_view(self):
         procedure = Procedure(self.db)
-        final_query = ' CREATE OR ALTER VIEW vw_AllSurveyDataPython AS ' + procedure.get_all_survey_data()
+        final_query = ' CREATE OR ALTER VIEW vw_AllSurveyData AS ' + procedure.get_all_survey_data()
         self.db.create(final_query)
         Verbose.print_ln("View updated.")
 
