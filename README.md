@@ -11,7 +11,7 @@ Abdullah Daqdoqa
 
 
 
-### Run script with arguments, expected values example:
+### Run script with CMD/terminal with the following arguments, expected values example:
 
     driver = '{ODBC Driver 17 for SQL Server}'
     server = 'ABDULLAH\SQL2019'
